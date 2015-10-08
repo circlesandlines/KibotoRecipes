@@ -1,0 +1,15 @@
+#!/bin/bash
+
+git clone git@github.com:circlesandlines/Kiboto.git
+git clone https://github.com/circlesandlines/KibotoGameSDK
+git clone https://github.com/circlesandlines/KibotoBotSDK
+
+cd Kiboto
+pip install -r requirements.txt
+cp conf/server_sample.config conf/server.config
+
+cd ..
+cd KibotoBotSDK
+python setup.py install
+
+cd ..
