@@ -1,15 +1,30 @@
 #!/bin/bash
 
-git clone git@github.com:circlesandlines/Kiboto.git
-git clone https://github.com/circlesandlines/KibotoGameSDK
-git clone https://github.com/circlesandlines/KibotoBotSDK
+# create an environment to install all the repos
+mkdir kiboto_projects
+cd kiboto_projects
 
+# install redis
+wget http://download.redis.io/redis-stable.tar.gz
+tar xvzf redis-stable.tar.gz
+cd redis-stable
+make
+
+# download the repos
+git clone git@github.com:circlesandlines/Kiboto.git
+git clone git@github.com:circlesandlines/KibotoGameSDK.git
+git clone git@github.com:circlesandlines/KibotoBotSDK.git
+git clone git@github.com:circlesandlines/KibotoRecipes.git
+
+# install Kiboto server
 cd Kiboto
 pip install -r requirements.txt
 cp conf/server_sample.config conf/server.config
 
+# install bot SDK
 cd ..
 cd KibotoBotSDK
 python setup.py install
 
 cd ..
+
