@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # create an environment to install all the repos
+cd ..
 mkdir kiboto_projects
 cd kiboto_projects
 
