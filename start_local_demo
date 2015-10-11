@@ -2,30 +2,32 @@
 
 
 # the following is the expected directory structure:
-# root/
-# .../KibotoRecipes/start_local_demo.sh <- run here
+# KibotoRecipes/start_local_demo.sh <- run here
+# kiboto_projects/
 # .../Kiboto
 # .../KibotoClientSDK
 # .../KibotoBotSDK
 
+# stay in this directory the whole time
+cd ../kiboto_projects
+
 # start the redis server
-redis-server
+redis-server &> redis.log &
 
 # start the kiboto server
 echo "starting kiboto server. tail outputs using: tail -f kiboto.log"
-python ../Kiboto/kiboto.py &> kiboto.log &
+python Kiboto/kiboto.py &> kiboto.log &
 
 # start the sample game
-excho "starting sample 'game'"
-http-server ../KibotoGameSDK/ &> /dev/null &
+echo "starting sample 'game'"
+http-server KibotoGameSDK/ &> game.log &
 
 echo "wait a bit for game to initialize a session"
 sleep 2
 
 # start the sample bots
-cd ../KibotoBotSDK
 echo "starting bot sample 1, to tail outputs, use: tail -f bot_1.log"
-python sample_bot.py &> bot_1.log &
+python KibotoGameSDK/sample_bot.py &> bot_1.log &
 echo "starting bot sample 2, to tail outputs, use: tail -f bot_2.log"
-python sample_bot2.py &> bot_2.log &
+python KibotoGameSDK/sample_bot2.py &> bot_2.log &
 
