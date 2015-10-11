@@ -12,10 +12,9 @@ cd redis-stable
 make
 
 # download the repos
-git clone git@github.com:circlesandlines/Kiboto.git
-git clone git@github.com:circlesandlines/KibotoGameSDK.git
-git clone git@github.com:circlesandlines/KibotoBotSDK.git
-git clone git@github.com:circlesandlines/KibotoRecipes.git
+git clone https://github.com/circlesandlines/Kiboto.git
+git clone https://github.com/circlesandlines/KibotoGameSDK.git
+git clone https://github.com/circlesandlines/KibotoBotSDK.git
 
 # install Kiboto server
 cd Kiboto
