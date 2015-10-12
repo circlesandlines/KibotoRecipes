@@ -29,3 +29,7 @@ python setup.py install
 
 cd ..
 
+# install npm http-server
+cd KibotoGameSDK
+npm install http-server -g
+cd ..
