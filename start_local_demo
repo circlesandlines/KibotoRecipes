@@ -16,7 +16,9 @@ redis-server &> redis.log &
 
 # start the kiboto server
 echo "starting kiboto server. tail outputs using: tail -f kiboto.log"
-python Kiboto/kiboto.py &> kiboto.log &
+cd Kiboto
+python kiboto.py &> ../kiboto.log &
+cd ..
 
 # start the sample game
 echo "starting sample 'game'"
@@ -26,8 +28,10 @@ echo "wait a bit for game to initialize a session"
 sleep 2
 
 # start the sample bots
+cd KibotoGameSDK
 echo "starting bot sample 1, to tail outputs, use: tail -f bot_1.log"
-python KibotoGameSDK/sample_bot.py &> bot_1.log &
+python sample_bot.py &> ../bot_1.log &
 echo "starting bot sample 2, to tail outputs, use: tail -f bot_2.log"
-python KibotoGameSDK/sample_bot2.py &> bot_2.log &
+python sample_bot2.py &> ../bot_2.log &
+cd ..
 
