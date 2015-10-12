@@ -10,6 +10,7 @@ wget http://download.redis.io/redis-stable.tar.gz
 tar xvzf redis-stable.tar.gz
 cd redis-stable
 make
+cd ..
 
 # download the repos
 git clone https://github.com/circlesandlines/Kiboto.git
