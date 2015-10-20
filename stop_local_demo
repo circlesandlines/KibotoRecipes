@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pkill -f sample_bot*.py
+pkill -f kiboto.py
+pkill -f http-server
+pkill -f redis-server
