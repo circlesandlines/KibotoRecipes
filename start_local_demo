@@ -22,7 +22,7 @@ cd ..
 
 # start the sample game
 echo "starting sample 'game'"
-http-server KibotoGameSDK/ &> game.log &
+http-server KibotoGameSDK/starter_game_template.html &> game.log &
 
 echo "wait a bit for game to initialize a session"
 sleep 2
@@ -30,8 +30,8 @@ sleep 2
 # start the sample bots
 cd KibotoGameSDK
 echo "starting bot sample 1, to tail outputs, use: tail -f bot_1.log"
-python sample_bot.py &> ../bot_1.log &
+python starter_bot_template.py &> ../bot_1.log &
 echo "starting bot sample 2, to tail outputs, use: tail -f bot_2.log"
-python sample_bot2.py &> ../bot_2.log &
+python starter_bot_template2.py &> ../bot_2.log &
 cd ..
 
